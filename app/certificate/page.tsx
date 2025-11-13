@@ -1,11 +1,12 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import CertificateGenerator from '@/components/CertificateGenerator';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
-export default function CertificatePage() {
+function CertificateContent() {
   const searchParams = useSearchParams();
   const userId = searchParams.get('userId');
   const moduleId = searchParams.get('moduleId');
@@ -32,5 +33,20 @@ export default function CertificatePage() {
       </Link>
       <CertificateGenerator userId={userId} moduleId={moduleId} />
     </>
+  );
+}
+
+export default function CertificatePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent"></div>
+          <p className="mt-4 text-gray-600">Loading certificate...</p>
+        </div>
+      </div>
+    }>
+      <CertificateContent />
+    </Suspense>
   );
 }
