@@ -290,3 +290,26 @@ a {
 .premium-card:hover .group-hover\:translate-x-1 {
   animation: arrowPulse 1s ease-in-out infinite;
 }
+
+/* Certificate Preview Mobile Optimization */
+.certificate-preview-container {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .certificate-preview-container {
+    font-size: 12px;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+
+  #certificate-preview {
+    border-width: 2px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-preview-container {
+    font-size: 10px;
+  }
+}

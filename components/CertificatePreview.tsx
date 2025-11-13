@@ -7,6 +7,7 @@ interface CertificatePreviewProps {
   userName: string;
   courseName: string;
   completionDate?: Date;
+  backgroundImage?: string | null;
 }
 
 export default function CertificatePreview({
@@ -14,6 +15,7 @@ export default function CertificatePreview({
   userName,
   courseName,
   completionDate = new Date(),
+  backgroundImage = null,
 }: CertificatePreviewProps) {
   const renderField = (field: any) => {
     if (!field.enabled) return null;
@@ -30,6 +32,8 @@ export default function CertificatePreview({
         year: 'numeric',
       });
 
+    const responsiveFontSize = `clamp(${Math.max(field.fontSize * 0.4, 8)}px, ${field.fontSize * 0.06}vw, ${field.fontSize}px)`;
+
     return (
       <div
         key={field.id}
@@ -39,11 +43,15 @@ export default function CertificatePreview({
           top: `${field.position.y}%`,
           transform: 'translate(-50%, -50%)',
           width: '90%',
+          maxWidth: '100%',
           textAlign: field.alignment,
-          fontSize: `${field.fontSize}px`,
+          fontSize: responsiveFontSize,
           fontWeight: field.fontWeight,
           color: field.color,
           fontFamily: template.fontFamily,
+          lineHeight: '1.2',
+          wordWrap: 'break-word',
+          overflow: 'hidden',
         }}
       >
         {displayValue}
@@ -67,15 +75,22 @@ export default function CertificatePreview({
   return (
     <div
       id="certificate-preview"
+      className="certificate-preview-container"
       style={{
         width: '100%',
+        maxWidth: '100%',
         aspectRatio: '1.414', // A4 ratio
-        backgroundColor: template.backgroundColor,
+        backgroundColor: backgroundImage ? 'transparent' : template.backgroundColor,
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         border: getBorderStyle(),
         borderRadius: template.layout === 'modern' ? '16px' : '4px',
         position: 'relative',
-        padding: '40px',
+        padding: 'clamp(10px, 3vw, 40px)',
         boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+        overflow: 'hidden',
       }}
     >
       {/* Decorative elements based on layout */}

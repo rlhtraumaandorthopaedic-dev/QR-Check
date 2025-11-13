@@ -95,9 +95,37 @@ export default function CertificateConfigurator() {
 
   const [saving, setSaving] = useState(false);
   const [savedId, setSavedId] = useState<string | null>(null);
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
 
   const updateTemplateField = (key: keyof typeof template, value: any) => {
     setTemplate({ ...template, [key]: value });
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Check file size (max 2MB)
+    if (file.size > 2 * 1024 * 1024) {
+      alert('Image size should be less than 2MB');
+      return;
+    }
+
+    // Check file type
+    if (!file.type.startsWith('image/')) {
+      alert('Please upload an image file');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setBackgroundImage(event.target?.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const clearBackgroundImage = () => {
+    setBackgroundImage(null);
   };
 
   const updateField = (fieldId: string, updates: Partial<CertificateField>) => {
@@ -188,6 +216,34 @@ export default function CertificateConfigurator() {
                       <option value="sans-serif">Sans-Serif (Arial, Helvetica)</option>
                       <option value="cursive">Cursive (Script)</option>
                     </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-1">
+                      Custom Background Image
+                    </label>
+                    <div className="space-y-2">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-600"
+                      />
+                      {backgroundImage && (
+                        <div className="flex gap-2">
+                          <button
+                            onClick={clearBackgroundImage}
+                            className="text-xs text-red-400 hover:text-red-300 underline"
+                          >
+                            Remove Image
+                          </button>
+                          <span className="text-xs text-cyan-400">✓ Image uploaded</span>
+                        </div>
+                      )}
+                      <p className="text-xs text-gray-500">
+                        Upload a custom certificate design (max 2MB, PNG/JPG)
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -338,7 +394,14 @@ export default function CertificateConfigurator() {
           {/* Preview Panel */}
           <div className="premium-card rounded-xl shadow-lg p-6">
             <h2 className="text-xl font-bold text-white mb-4">Preview</h2>
-            <CertificatePreview template={template} userName="John Doe" courseName="Sample Course" />
+            <div className="overflow-x-auto">
+              <CertificatePreview
+                template={template}
+                userName="John Doe"
+                courseName="Sample Course"
+                backgroundImage={backgroundImage}
+              />
+            </div>
           </div>
         </div>
       </div>
