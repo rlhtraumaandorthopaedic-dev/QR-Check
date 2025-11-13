@@ -51,13 +51,13 @@ export default function CompetencyPage() {
             Back to Home
           </Link>
 
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">Welcome!</h1>
-            <p className="text-gray-600 mb-6">Please enter your details to get started</p>
+          <div className="premium-card rounded-xl shadow-lg p-8">
+            <h1 className="text-2xl font-bold text-white mb-2">Welcome!</h1>
+            <p className="text-gray-400 mb-6">Please enter your details to get started</p>
 
             <form onSubmit={handleSetup} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Your Name
                 </label>
                 <input
@@ -65,17 +65,17 @@ export default function CompetencyPage() {
                   name="name"
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Your Role
                 </label>
                 <select
                   name="role"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 >
                   <option value="student">Student</option>
                   <option value="assessor">Assessor/Supervisor</option>
@@ -101,7 +101,7 @@ export default function CompetencyPage() {
 
   return (
     <>
-      <Link href="/" className="fixed top-4 left-4 inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 bg-white px-4 py-2 rounded-lg shadow-md z-50">
+      <Link href="/" className="fixed top-4 left-4 inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 premium-card px-4 py-2 rounded-lg shadow-md z-50">
         <ArrowLeft size={20} />
         Home
       </Link>

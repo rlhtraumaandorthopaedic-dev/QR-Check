@@ -40,20 +40,20 @@ export default function AttendancePage() {
 
   if (!isReady) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+      <div className="min-h-screen bg-black p-4">
         <div className="max-w-md mx-auto pt-16">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-6">
+          <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors">
             <ArrowLeft size={20} />
             Back to Home
           </Link>
 
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">Welcome!</h1>
-            <p className="text-gray-600 mb-6">Please enter your name to get started</p>
+          <div className="premium-card rounded-2xl shadow-lg p-8">
+            <h1 className="text-2xl font-bold text-white mb-2">Welcome!</h1>
+            <p className="text-gray-400 mb-6">Please enter your name to get started</p>
 
             <form onSubmit={handleSetup} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Your Name
                 </label>
                 <input
@@ -61,13 +61,13 @@ export default function AttendancePage() {
                   name="name"
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-black/40 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 text-black font-semibold py-3 px-6 rounded-lg transition-all"
               >
                 Continue
               </button>
@@ -84,7 +84,7 @@ export default function AttendancePage() {
 
   return (
     <>
-      <Link href="/" className="fixed top-4 left-4 inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 bg-white px-4 py-2 rounded-lg shadow-md z-50">
+      <Link href="/" className="fixed top-4 left-4 inline-flex items-center gap-2 text-gray-400 hover:text-white bg-black/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-800 z-50 transition-colors">
         <ArrowLeft size={20} />
         Home
       </Link>

@@ -79,16 +79,16 @@ export default function AdminParticipationPage() {
           Back to Admin
         </Link>
 
-        <div className="bg-white rounded-xl shadow-lg p-6">
+        <div className="premium-card rounded-xl shadow-lg p-6">
           <div className="flex items-center gap-3 mb-6">
             <Trophy className="text-orange-600" size={32} />
-            <h1 className="text-2xl font-bold text-gray-800">Generate Activity QR Code</h1>
+            <h1 className="text-2xl font-bold text-white">Generate Activity QR Code</h1>
           </div>
 
           {!qrCodeUrl ? (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Activity Name *
                 </label>
                 <input
@@ -96,12 +96,12 @@ export default function AdminParticipationPage() {
                   value={activityName}
                   onChange={(e) => setActivityName(e.target.value)}
                   placeholder="e.g., Workshop Station 1"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Location *
                 </label>
                 <input
@@ -109,12 +109,12 @@ export default function AdminParticipationPage() {
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   placeholder="e.g., Room 201"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Description
                 </label>
                 <textarea
@@ -122,12 +122,12 @@ export default function AdminParticipationPage() {
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Describe the activity..."
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Points Reward
                 </label>
                 <input
@@ -135,7 +135,7 @@ export default function AdminParticipationPage() {
                   value={points}
                   onChange={(e) => setPoints(e.target.value)}
                   min="1"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
               </div>
 
@@ -155,9 +155,9 @@ export default function AdminParticipationPage() {
                   alt="Activity QR Code"
                   className="mx-auto mb-4 border-4 border-white shadow-lg rounded-lg"
                 />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{activityName}</h3>
-                <p className="text-gray-600 text-sm mb-1">📍 {location}</p>
-                {description && <p className="text-gray-600 text-sm mb-2">{description}</p>}
+                <h3 className="text-lg font-semibold text-white mb-2">{activityName}</h3>
+                <p className="text-gray-400 text-sm mb-1">📍 {location}</p>
+                {description && <p className="text-gray-400 text-sm mb-2">{description}</p>}
                 <p className="text-orange-600 font-semibold">⭐ {points} points</p>
                 <p className="text-gray-500 text-xs mt-3">Activity ID: {activityId}</p>
               </div>

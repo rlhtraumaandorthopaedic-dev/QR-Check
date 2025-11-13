@@ -77,8 +77,8 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+      <div className="premium-card rounded-lg shadow-lg p-6">
+        <h2 className="text-2xl font-bold text-white mb-4 text-center">
           Scan QR Code
         </h2>
 
@@ -112,7 +112,7 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
           )}
         </div>
 
-        <p className="text-sm text-gray-600 text-center mt-4">
+        <p className="text-sm text-gray-400 text-center mt-4">
           Position the QR code within the frame to scan
         </p>
       </div>

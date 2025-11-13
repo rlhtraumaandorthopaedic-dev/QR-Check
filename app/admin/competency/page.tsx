@@ -76,16 +76,16 @@ export default function AdminCompetencyPage() {
           Back to Admin
         </Link>
 
-        <div className="bg-white rounded-xl shadow-lg p-6">
+        <div className="premium-card rounded-xl shadow-lg p-6">
           <div className="flex items-center gap-3 mb-6">
             <Award className="text-teal-600" size={32} />
-            <h1 className="text-2xl font-bold text-gray-800">Generate Competency QR Code</h1>
+            <h1 className="text-2xl font-bold text-white">Generate Competency QR Code</h1>
           </div>
 
           {!qrCodeUrl ? (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Competency Name *
                 </label>
                 <input
@@ -93,12 +93,12 @@ export default function AdminCompetencyPage() {
                   value={competencyName}
                   onChange={(e) => setCompetencyName(e.target.value)}
                   placeholder="e.g., Basic Life Support"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Category *
                 </label>
                 <input
@@ -106,12 +106,12 @@ export default function AdminCompetencyPage() {
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   placeholder="e.g., Clinical Skills"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Description
                 </label>
                 <textarea
@@ -119,7 +119,7 @@ export default function AdminCompetencyPage() {
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Describe what this competency involves..."
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
                 />
               </div>
 
@@ -139,9 +139,9 @@ export default function AdminCompetencyPage() {
                   alt="Competency QR Code"
                   className="mx-auto mb-4 border-4 border-white shadow-lg rounded-lg"
                 />
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{competencyName}</h3>
-                <p className="text-gray-600 text-sm mb-1">📂 {category}</p>
-                {description && <p className="text-gray-600 text-sm mb-2">{description}</p>}
+                <h3 className="text-lg font-semibold text-white mb-2">{competencyName}</h3>
+                <p className="text-gray-400 text-sm mb-1">📂 {category}</p>
+                {description && <p className="text-gray-400 text-sm mb-2">{description}</p>}
                 <p className="text-gray-500 text-xs mt-3">Competency ID: {competencyId}</p>
               </div>
 

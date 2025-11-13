@@ -95,11 +95,11 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-100 p-4">
       <div className="max-w-md mx-auto pt-8">
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div className="premium-card rounded-xl shadow-lg p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Competency Assessment</h1>
-              <p className="text-gray-600 text-sm">
+              <h1 className="text-2xl font-bold text-white">Competency Assessment</h1>
+              <p className="text-gray-400 text-sm">
                 {userName} ({role})
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
 
           {status === 'success' && (
             <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
-              <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+              <CheckCircle className="text-white flex-shrink-0 mt-0.5" size={20} />
               <div>
                 <p className="font-semibold text-green-800">Success!</p>
                 <p className="text-green-700 text-sm">{message}</p>
@@ -133,7 +133,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
 
               <form onSubmit={handleSubmitAssessment} className="space-y-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Student Name *
                   </label>
                   <div className="relative">
@@ -145,14 +145,14 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
                         setAssessmentData({ ...assessmentData, studentName: e.target.value })
                       }
                       required
-                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500"
                       placeholder="Enter student name"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Status *</label>
+                  <label className="block text-sm font-medium text-gray-300 mb-1">Status *</label>
                   <select
                     value={assessmentData.assessmentStatus}
                     onChange={(e) =>
@@ -161,7 +161,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
                         assessmentStatus: e.target.value as any,
                       })
                     }
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500"
                   >
                     <option value="achieved">Achieved</option>
                     <option value="in-progress">In Progress</option>
@@ -170,7 +170,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Notes (Optional)
                   </label>
                   <textarea
@@ -179,7 +179,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
                       setAssessmentData({ ...assessmentData, notes: e.target.value })
                     }
                     rows={3}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 resize-none"
+                    className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 resize-none"
                     placeholder="Add any observations or feedback..."
                   />
                 </div>
@@ -197,7 +197,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
                       setStatus('idle');
                       setCurrentCompetency(null);
                     }}
-                    className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                    className="px-4 py-2 border border-gray-700 rounded-lg hover:bg-gray-50"
                   >
                     Cancel
                   </button>
@@ -210,8 +210,8 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
         {status !== 'assess' && <QRScanner onScan={handleScan} onError={handleError} />}
 
         {role === 'student' && (
-          <div className="mt-6 bg-white rounded-lg shadow-lg p-4">
-            <p className="text-sm text-gray-600">
+          <div className="mt-6 premium-card rounded-lg shadow-lg p-4">
+            <p className="text-sm text-gray-400">
               <strong>Note:</strong> Only assessors can scan competency QR codes to record
               assessments. If you need a competency assessed, please contact your supervisor.
             </p>

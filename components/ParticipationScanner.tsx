@@ -96,11 +96,11 @@ export default function ParticipationScanner({ userId, userName }: Participation
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-100 p-4">
       <div className="max-w-md mx-auto pt-8">
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div className="premium-card rounded-xl shadow-lg p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Participation</h1>
-              <p className="text-gray-600 text-sm">{userName}</p>
+              <h1 className="text-2xl font-bold text-white">Participation</h1>
+              <p className="text-gray-400 text-sm">{userName}</p>
             </div>
             <Trophy className="text-orange-600" size={32} />
           </div>
@@ -118,7 +118,7 @@ export default function ParticipationScanner({ userId, userName }: Participation
 
           {status === 'success' && (
             <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
-              <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+              <CheckCircle className="text-white flex-shrink-0 mt-0.5" size={20} />
               <div>
                 <p className="font-semibold text-green-800">Success!</p>
                 <p className="text-green-700 text-sm">{message}</p>
@@ -140,9 +140,9 @@ export default function ParticipationScanner({ userId, userName }: Participation
         <QRScanner onScan={handleScan} onError={handleError} />
 
         {lastActivity && (
-          <div className="mt-6 bg-white rounded-lg shadow-lg p-4">
-            <h3 className="font-semibold text-gray-800 mb-2">Last Activity</h3>
-            <div className="text-sm text-gray-600">
+          <div className="mt-6 premium-card rounded-lg shadow-lg p-4">
+            <h3 className="font-semibold text-white mb-2">Last Activity</h3>
+            <div className="text-sm text-gray-400">
               <p className="font-medium">{lastActivity.activityName}</p>
               <p className="flex items-center gap-1">
                 <Star className="text-amber-500" size={16} fill="currentColor" />

@@ -183,10 +183,10 @@ export default function CertificateGenerator({ userId, moduleId }: CertificateGe
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br black flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading certificate...</p>
+          <p className="text-gray-400">Loading certificate...</p>
         </div>
       </div>
     );
@@ -194,11 +194,11 @@ export default function CertificateGenerator({ userId, moduleId }: CertificateGe
 
   if (!template || !trainingData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
-        <div className="text-center bg-white rounded-xl shadow-lg p-8 max-w-md">
+      <div className="min-h-screen bg-gradient-to-br black flex items-center justify-center">
+        <div className="text-center premium-card rounded-xl shadow-lg p-8 max-w-md">
           <Award className="text-gray-400 mx-auto mb-4" size={64} />
-          <h2 className="text-xl font-bold text-gray-800 mb-2">Certificate Not Available</h2>
-          <p className="text-gray-600">
+          <h2 className="text-xl font-bold text-white mb-2">Certificate Not Available</h2>
+          <p className="text-gray-400">
             Please complete the training module first to generate your certificate.
           </p>
         </div>
@@ -207,15 +207,15 @@ export default function CertificateGenerator({ userId, moduleId }: CertificateGe
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br black p-4">
       <div className="max-w-4xl mx-auto pt-8">
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div className="premium-card rounded-xl shadow-lg p-6 mb-6">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Your Certificate</h1>
-              <p className="text-gray-600 text-sm">{trainingData.moduleName}</p>
+              <h1 className="text-2xl font-bold text-white">Your Certificate</h1>
+              <p className="text-gray-400 text-sm">{trainingData.moduleName}</p>
             </div>
-            <Award className="text-purple-600" size={32} />
+            <Award className="text-white" size={32} />
           </div>
 
           <CertificatePreview
@@ -228,7 +228,7 @@ export default function CertificateGenerator({ userId, moduleId }: CertificateGe
           <div className="mt-6 flex gap-3">
             <button
               onClick={handleDownloadPDF}
-              className="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+              className="flex-1 bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
             >
               <Download size={20} />
               Download PDF
@@ -244,10 +244,10 @@ export default function CertificateGenerator({ userId, moduleId }: CertificateGe
 
           {certificate && (
             <div className="mt-4 bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <p className="text-sm text-gray-600 mb-1">
+              <p className="text-sm text-gray-400 mb-1">
                 <strong>Verification Code:</strong>
               </p>
-              <code className="text-xs bg-white px-3 py-2 rounded border border-gray-300 block">
+              <code className="text-xs premium-card px-3 py-2 rounded border border-gray-700 block">
                 {certificate.verificationCode}
               </code>
             </div>

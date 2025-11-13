@@ -120,20 +120,20 @@ export default function TrainingScanner({ userId, userName }: TrainingScannerPro
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br black p-4">
       <div className="max-w-md mx-auto pt-8">
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div className="premium-card rounded-xl shadow-lg p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">Training</h1>
-              <p className="text-gray-600 text-sm">{userName}</p>
+              <h1 className="text-2xl font-bold text-white">Training</h1>
+              <p className="text-gray-400 text-sm">{userName}</p>
             </div>
-            <GraduationCap className="text-green-600" size={32} />
+            <GraduationCap className="text-white" size={32} />
           </div>
 
           {status === 'success' && (
             <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
-              <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+              <CheckCircle className="text-white flex-shrink-0 mt-0.5" size={20} />
               <div>
                 <p className="font-semibold text-green-800">Success!</p>
                 <p className="text-green-700 text-sm">{message}</p>
@@ -154,13 +154,13 @@ export default function TrainingScanner({ userId, userName }: TrainingScannerPro
           {currentModule && currentModule.status === 'in-progress' && (
             <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
               <div className="flex items-center gap-2 mb-3">
-                <Clock className="text-blue-600" size={20} />
+                <Clock className="text-gray-400" size={20} />
                 <h3 className="font-semibold text-blue-800">In Progress</h3>
               </div>
               <p className="text-blue-700 text-sm mb-3">{currentModule.moduleName}</p>
               <button
                 onClick={handleComplete}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                className="w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
               >
                 Mark as Complete
               </button>
@@ -170,13 +170,13 @@ export default function TrainingScanner({ userId, userName }: TrainingScannerPro
           {currentModule && currentModule.status === 'completed' && (
             <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
               <div className="flex items-center gap-2 mb-3">
-                <Award className="text-green-600" size={20} />
+                <Award className="text-white" size={20} />
                 <h3 className="font-semibold text-green-800">Completed!</h3>
               </div>
               <p className="text-green-700 text-sm mb-3">{currentModule.moduleName}</p>
               <Link
                 href={`/certificate?userId=${userId}&moduleId=${currentModule.moduleId}`}
-                className="block w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-center"
+                className="block w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-center"
               >
                 View Certificate
               </Link>

@@ -165,7 +165,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center mt-8 sm:mt-12 lg:mt-16 text-gray-600 text-xs sm:text-sm font-light">
+        <div className="text-center mt-8 sm:mt-12 lg:mt-16 text-gray-400 text-xs sm:text-sm font-light">
           <p>Professional surgical training platform</p>
         </div>
       </div>

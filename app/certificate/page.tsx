@@ -13,11 +13,11 @@ function CertificateContent() {
 
   if (!userId || !moduleId) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
-        <div className="text-center bg-white rounded-xl shadow-lg p-8 max-w-md">
-          <h2 className="text-xl font-bold text-gray-800 mb-2">Invalid Certificate Link</h2>
-          <p className="text-gray-600 mb-4">Please ensure you have the correct link to view your certificate.</p>
-          <Link href="/" className="text-purple-600 hover:text-purple-700 font-semibold">
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center premium-card rounded-xl shadow-lg p-8 max-w-md">
+          <h2 className="text-xl font-bold text-white mb-2">Invalid Certificate Link</h2>
+          <p className="text-gray-400 mb-4">Please ensure you have the correct link to view your certificate.</p>
+          <Link href="/" className="text-blue-400 hover:text-blue-300 font-semibold">
             Go to Home
           </Link>
         </div>
@@ -27,7 +27,7 @@ function CertificateContent() {
 
   return (
     <>
-      <Link href="/training" className="fixed top-4 left-4 inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 bg-white px-4 py-2 rounded-lg shadow-md z-50">
+      <Link href="/training" className="fixed top-4 left-4 inline-flex items-center gap-2 text-gray-400 hover:text-white bg-black/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-800 z-50 transition-colors">
         <ArrowLeft size={20} />
         Back to Training
       </Link>
@@ -39,10 +39,10 @@ function CertificateContent() {
 export default function CertificatePage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent"></div>
-          <p className="mt-4 text-gray-600">Loading certificate...</p>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
+          <p className="mt-4 text-gray-400">Loading certificate...</p>
         </div>
       </div>
     }>
