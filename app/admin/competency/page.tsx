@@ -93,7 +93,7 @@ export default function AdminCompetencyPage() {
                   value={competencyName}
                   onChange={(e) => setCompetencyName(e.target.value)}
                   placeholder="e.g., Basic Life Support"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-blue-500"
                 />
               </div>
 
@@ -106,7 +106,7 @@ export default function AdminCompetencyPage() {
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   placeholder="e.g., Clinical Skills"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-blue-500"
                 />
               </div>
 
@@ -119,25 +119,25 @@ export default function AdminCompetencyPage() {
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Describe what this competency involves..."
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-blue-500 resize-none"
                 />
               </div>
 
               <button
                 onClick={handleGenerate}
                 disabled={loading}
-                className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-teal-600 hover:bg-teal-700 disabled:from-gray-600 disabled:to-gray-700 text-black disabled:text-gray-400 font-semibold py-3 px-6 rounded-lg transition-colors"
               >
                 {loading ? 'Generating...' : 'Generate QR Code'}
               </button>
             </div>
           ) : (
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6 text-center">
+              <div className="bg-black/40 rounded-lg p-6 text-center">
                 <img
                   src={qrCodeUrl}
                   alt="Competency QR Code"
-                  className="mx-auto mb-4 border-4 border-white shadow-lg rounded-lg"
+                  className="mx-auto mb-4 border-4 border-gray-700 shadow-lg rounded-lg"
                 />
                 <h3 className="text-lg font-semibold text-white mb-2">{competencyName}</h3>
                 <p className="text-gray-400 text-sm mb-1">📂 {category}</p>
@@ -161,8 +161,8 @@ export default function AdminCompetencyPage() {
                 </button>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                <p className="text-sm text-blue-300">
                   <strong>Next steps:</strong>
                   <br />
                   1. Download and print this QR code

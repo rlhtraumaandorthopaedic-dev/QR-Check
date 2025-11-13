@@ -129,7 +129,7 @@ export default function CertificateConfigurator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br black p-4">
+    <div className="min-h-screen bg-black p-4">
       <div className="max-w-7xl mx-auto pt-8">
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Configuration Panel */}
@@ -156,7 +156,7 @@ export default function CertificateConfigurator() {
                       type="text"
                       value={template.name}
                       onChange={(e) => updateTemplateField('name', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
 
@@ -167,7 +167,7 @@ export default function CertificateConfigurator() {
                     <select
                       value={template.layout}
                       onChange={(e) => updateTemplateField('layout', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="classic">Classic</option>
                       <option value="modern">Modern</option>
@@ -182,7 +182,7 @@ export default function CertificateConfigurator() {
                     <select
                       value={template.fontFamily}
                       onChange={(e) => updateTemplateField('fontFamily', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-3 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="serif">Serif (Georgia, Times)</option>
                       <option value="sans-serif">Sans-Serif (Arial, Helvetica)</option>
@@ -319,15 +319,15 @@ export default function CertificateConfigurator() {
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 disabled:from-gray-600 disabled:to-gray-700 text-black disabled:text-gray-400 font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
               >
                 <Save size={20} />
                 {saving ? 'Saving...' : 'Save Template'}
               </button>
 
               {savedId && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                  <p className="text-sm text-green-800">
+                <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-3">
+                  <p className="text-sm text-cyan-300">
                     Template saved! ID: <code className="bg-green-100 px-2 py-1 rounded">{savedId}</code>
                   </p>
                 </div>

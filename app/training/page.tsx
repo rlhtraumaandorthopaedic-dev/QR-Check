@@ -38,9 +38,9 @@ export default function TrainingPage() {
 
   if (!isReady) {
     return (
-      <div className="min-h-screen bg-gradient-to-br black p-4">
+      <div className="min-h-screen bg-black p-4">
         <div className="max-w-md mx-auto pt-16">
-          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-green-700 mb-6">
+          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-cyan-400/80 mb-6">
             <ArrowLeft size={20} />
             Back to Home
           </Link>
@@ -59,7 +59,7 @@ export default function TrainingPage() {
                   name="name"
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-blue-500"
                 />
               </div>
 
@@ -82,7 +82,7 @@ export default function TrainingPage() {
 
   return (
     <>
-      <Link href="/" className="fixed top-4 left-4 inline-flex items-center gap-2 text-white hover:text-green-700 premium-card px-4 py-2 rounded-lg shadow-md z-50">
+      <Link href="/" className="fixed top-4 left-4 inline-flex items-center gap-2 text-white hover:text-cyan-400/80 premium-card px-4 py-2 rounded-lg shadow-md z-50">
         <ArrowLeft size={20} />
         Home
       </Link>

@@ -59,7 +59,7 @@ export default function ParticipationPage() {
                   name="name"
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-blue-500"
                 />
               </div>
 

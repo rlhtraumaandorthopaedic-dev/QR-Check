@@ -83,7 +83,7 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
         </h2>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+          <div className="mb-4 p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400/80 text-sm">
             {error}
           </div>
         )}

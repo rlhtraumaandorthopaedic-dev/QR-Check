@@ -76,7 +76,7 @@ export default function AdminQRGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br black p-4">
+    <div className="min-h-screen bg-black p-4">
       <div className="max-w-2xl mx-auto pt-8">
         <div className="premium-card rounded-xl shadow-lg p-6">
           <div className="flex items-center gap-3 mb-6">
@@ -95,7 +95,7 @@ export default function AdminQRGenerator() {
                   value={eventName}
                   onChange={(e) => setEventName(e.target.value)}
                   placeholder="e.g., Morning Lecture - Biology 101"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-black/40 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500"
                 />
               </div>
 
@@ -108,7 +108,7 @@ export default function AdminQRGenerator() {
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   placeholder="e.g., Room 301, Building A"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-black/40 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500"
                 />
               </div>
 
@@ -121,25 +121,25 @@ export default function AdminQRGenerator() {
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Additional details about the event..."
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 bg-black/40 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500 resize-none"
                 />
               </div>
 
               <button
                 onClick={handleGenerate}
                 disabled={loading}
-                className="w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-gradient-to-br from-white to-gray-300 hover:from-gray-100 hover:to-gray-400 disabled:from-gray-600 disabled:to-gray-700 text-black disabled:text-gray-400 font-semibold py-3 px-6 rounded-lg transition-all"
               >
                 {loading ? 'Generating...' : 'Generate QR Code'}
               </button>
             </div>
           ) : (
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6 text-center">
+              <div className="bg-black/40 border border-gray-800 rounded-lg p-6 text-center">
                 <img
                   src={qrCodeUrl}
                   alt="QR Code"
-                  className="mx-auto mb-4 border-4 border-white shadow-lg rounded-lg"
+                  className="mx-auto mb-4 border-4 border-gray-700 shadow-lg rounded-lg"
                 />
                 <h3 className="text-lg font-semibold text-white mb-2">{eventName}</h3>
                 <p className="text-gray-400 text-sm mb-1">📍 {location}</p>
@@ -163,8 +163,8 @@ export default function AdminQRGenerator() {
                 </button>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                <p className="text-sm text-blue-300">
                   <strong>Next steps:</strong>
                   <br />
                   1. Download and print this QR code

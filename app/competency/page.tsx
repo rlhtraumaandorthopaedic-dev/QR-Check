@@ -65,7 +65,7 @@ export default function CompetencyPage() {
                   name="name"
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-blue-500"
                 />
               </div>
 
@@ -75,7 +75,7 @@ export default function CompetencyPage() {
                 </label>
                 <select
                   name="role"
-                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-blue-500"
                 >
                   <option value="student">Student</option>
                   <option value="assessor">Assessor/Supervisor</option>

@@ -96,7 +96,7 @@ export default function AdminParticipationPage() {
                   value={activityName}
                   onChange={(e) => setActivityName(e.target.value)}
                   placeholder="e.g., Workshop Station 1"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-blue-500"
                 />
               </div>
 
@@ -109,7 +109,7 @@ export default function AdminParticipationPage() {
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   placeholder="e.g., Room 201"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-blue-500"
                 />
               </div>
 
@@ -122,7 +122,7 @@ export default function AdminParticipationPage() {
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Describe the activity..."
                   rows={3}
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-blue-500 resize-none"
                 />
               </div>
 
@@ -135,25 +135,25 @@ export default function AdminParticipationPage() {
                   value={points}
                   onChange={(e) => setPoints(e.target.value)}
                   min="1"
-                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-blue-500"
                 />
               </div>
 
               <button
                 onClick={handleGenerate}
                 disabled={loading}
-                className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-orange-600 hover:bg-orange-700 disabled:from-gray-600 disabled:to-gray-700 text-black disabled:text-gray-400 font-semibold py-3 px-6 rounded-lg transition-colors"
               >
                 {loading ? 'Generating...' : 'Generate QR Code'}
               </button>
             </div>
           ) : (
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6 text-center">
+              <div className="bg-black/40 rounded-lg p-6 text-center">
                 <img
                   src={qrCodeUrl}
                   alt="Activity QR Code"
-                  className="mx-auto mb-4 border-4 border-white shadow-lg rounded-lg"
+                  className="mx-auto mb-4 border-4 border-gray-700 shadow-lg rounded-lg"
                 />
                 <h3 className="text-lg font-semibold text-white mb-2">{activityName}</h3>
                 <p className="text-gray-400 text-sm mb-1">📍 {location}</p>

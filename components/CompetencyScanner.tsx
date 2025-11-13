@@ -107,28 +107,28 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
           </div>
 
           {status === 'success' && (
-            <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+            <div className="mb-4 p-4 bg-cyan-500/10 border border-cyan-500/30 rounded-lg flex items-start gap-3">
               <CheckCircle className="text-white flex-shrink-0 mt-0.5" size={20} />
               <div>
-                <p className="font-semibold text-green-800">Success!</p>
-                <p className="text-green-700 text-sm">{message}</p>
+                <p className="font-semibold text-cyan-300">Success!</p>
+                <p className="text-cyan-400/80 text-sm">{message}</p>
               </div>
             </div>
           )}
 
           {status === 'error' && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+            <div className="mb-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3">
               <XCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
               <div>
-                <p className="font-semibold text-red-800">Error</p>
-                <p className="text-red-700 text-sm">{message}</p>
+                <p className="font-semibold text-red-300">Error</p>
+                <p className="text-red-400/80 text-sm">{message}</p>
               </div>
             </div>
           )}
 
           {status === 'assess' && currentCompetency && (
-            <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <h3 className="font-semibold text-blue-800 mb-3">Assess Competency</h3>
+            <div className="mb-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+              <h3 className="font-semibold text-blue-300 mb-3">Assess Competency</h3>
               <p className="text-blue-700 text-sm mb-4">{currentCompetency.name}</p>
 
               <form onSubmit={handleSubmitAssessment} className="space-y-3">
@@ -197,7 +197,7 @@ export default function CompetencyScanner({ userId, userName, role }: Competency
                       setStatus('idle');
                       setCurrentCompetency(null);
                     }}
-                    className="px-4 py-2 border border-gray-700 rounded-lg hover:bg-gray-50"
+                    className="px-4 py-2 border border-gray-700 rounded-lg hover:bg-black/40"
                   >
                     Cancel
                   </button>

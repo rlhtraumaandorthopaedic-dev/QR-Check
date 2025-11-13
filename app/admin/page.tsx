@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function AdminPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br black p-4">
+    <div className="min-h-screen bg-black p-4">
       <div className="max-w-4xl mx-auto pt-8">
         <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-purple-700 mb-6">
           <ArrowLeft size={20} />
